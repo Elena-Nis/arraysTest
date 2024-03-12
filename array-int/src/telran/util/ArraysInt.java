@@ -22,9 +22,16 @@ public class ArraysInt {
 	}
 	
 	public static int[] removeNumber(int[] array, int index) {
-		//TODO
-		//apply method arraycopy of class System
-		return null;
+		int[] arrWork = new int[array.length-1];
+		int[] arrEnd = new int[array.length-1-index];
+		int[] arrBegin = new int[index];
+		System.arraycopy(array,index+1, arrEnd, 0, array.length-1-index);
+		System.arraycopy(array,0, arrBegin, 0, index);
+		//System.arraycopy(arrWork,index, arrEnd, 0, arrEnd.length);
+		//System.arraycopy(arrWork,0, arrBegin, 0, arrBegin.length);
+		System.arraycopy(arrEnd,0,arrWork, index, arrEnd.length);
+		System.arraycopy(arrBegin,0, arrWork, 0, arrBegin.length);
+		return arrWork;
 	}
 	public static int[] insertSorted(int[] sortedArray, int number) {
 		//TODO
