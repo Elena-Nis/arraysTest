@@ -22,9 +22,13 @@ int [] array = {10, 25, 30, 40, 100};
 		int[] arrayActualLast = insertNumber(array, 5, 25);
 		int[] arrayActualFirst = insertNumber(array, 0, 25);
 		int[] arrayActualMiddle = insertNumber(array, 3, 25);
+		int[] arrayActualNegative = insertNumber(array, -1, 25);
+		int[] arrayActualPositive = insertNumber(array, 6, 25);
 		assertArrayEquals(arrayExpectedLast, arrayActualLast);
 		assertArrayEquals(arrayExpectedFirst, arrayActualFirst);
 		assertArrayEquals(arrayExpectedMiddle, arrayActualMiddle);
+		assertArrayEquals(array, arrayActualNegative);
+		assertArrayEquals(array, arrayActualPositive);
 	}
 	@Test
 	void removeNumberTest() {
@@ -34,9 +38,13 @@ int [] array = {10, 25, 30, 40, 100};
 		int[] arrayActualLast = removeNumber(array, array.length - 1);
 		int[]arrayActualFirst = removeNumber(array, 0);
 		int[] arrayActualMiddle = removeNumber(array, 2);
+		int[] arrayActualNegative = removeNumber(array, -1);
+		int[] arrayActualPositive = removeNumber(array, 5);
 		assertArrayEquals(arrayExpectedLast, arrayActualLast);
 		assertArrayEquals(arrayExpectedFirst, arrayActualFirst);
 		assertArrayEquals(arrayExpectedMiddle, arrayActualMiddle);
+		assertArrayEquals(array, arrayActualNegative);
+		assertArrayEquals(array, arrayActualPositive);
 	}
 	@Test
 	void insertSortedTest() {
