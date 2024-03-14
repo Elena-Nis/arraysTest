@@ -49,14 +49,16 @@ int [] array = {10, 25, 30, 40, 100};
 	@Test
 	void insertSortedTest() {
 		int[] arrayExpectedLast = {10, 25, 30, 40, 100, 150};
-		int[] arrayExpectedFirst = { 10, 10, 25, 30, 40, 100};
-		int[] arrayExpectedMiddle = {10, 25, 30, 35, 40, 100};
-		int[] arrayActualLast = insertSorted(array, 150);
-		int[] arrayActualFirst = insertSorted(array, 10);
-		int[] arrayActualMiddle = insertSorted(array, 35);
-		assertArrayEquals(arrayExpectedLast, arrayActualLast);
-		assertArrayEquals(arrayExpectedFirst, arrayActualFirst);
-		assertArrayEquals(arrayExpectedMiddle, arrayActualMiddle);
+ 		int[] arrayExpectedFirst = { 10, 10, 25, 30, 40, 100};
+ 		int[] arrayExpectedMiddle = {10, 25, 30, 35, 40, 100};
+ 		int[] arrayActualLast = insertSorted(array, 150);
+ 		int[] arrayActualFirst = insertSorted(array, 10);
+ 	    int[] arrayActualMiddle = insertSorted(array, 35);
+ 		assertArrayEquals(arrayExpectedLast, arrayActualLast);
+ 		assertArrayEquals(arrayExpectedFirst, arrayActualFirst);
+ 		assertArrayEquals(arrayExpectedMiddle, arrayActualMiddle);
+//		int[] arrayActualM = insertSorted(array, 11);
+//		assertArrayEquals(arrayExpectedLast, arrayActualM);
 	}
 	@Test
 	void copyOfTest() {
@@ -82,7 +84,15 @@ int [] array = {10, 25, 30, 40, 100};
 	}
 	@Test
 	void binarySearchIntTest() {
-		//TODO
+		assertEquals(-2, Arrays.binarySearch(array, 11));
+		assertEquals(-1, Arrays.binarySearch(array, -5));
+		assertEquals(1, Arrays.binarySearch(array, 25));
+		assertEquals(-3, Arrays.binarySearch(array, 26));
+		assertEquals(0, Arrays.binarySearch(array, 10));
+		assertEquals(-1, Arrays.binarySearch(array, 5));
+		assertEquals(-6, Arrays.binarySearch(array, 101));
+		assertEquals(4, Arrays.binarySearch(array, 100));
+
 	}
 
 }
